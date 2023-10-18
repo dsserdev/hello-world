@@ -4,3 +4,9 @@
 
 17 Octomber
 still nothing
+
+
+# it's 18 October and this is the first of day of me developing projects
+
+## ## ## ## ## 
+Small Projects List:
