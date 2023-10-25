@@ -1,14 +1,11 @@
-const toggleBtn = document.querySelector(".sidebar-toggle");
+const modalBtn = document.querySelector(".modal-btn");
+const modalOverlay = document.querySelector(".modal-overlay");
 const closeBtn = document.querySelector(".close-btn");
-const sidebar = document.querySelector(".sidebar");
 
-console.log("intra", sidebar);
-toggleBtn.addEventListener("click", function () {
-  sidebar.classList.toggle("show-sidebar");
+modalBtn.addEventListener("click", function () {
+  modalOverlay.classList.toggle("open-modal");
 });
 
 closeBtn.addEventListener("click", function () {
-  sidebar.classList.toggle("show-sidebar");
-  //or
-  sidebar.classList.remove("show-siderbar");
+  modalOverlay.classList.remove("open-modal");
 });
