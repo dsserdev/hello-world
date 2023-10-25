@@ -15,3 +15,5 @@ Small Projects List:
 3. Reviews
 4. Navbar
 5. Sidebar
+6. Modal
+7. General questions
