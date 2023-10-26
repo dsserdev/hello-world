@@ -17,3 +17,5 @@ Small Projects List:
 5. Sidebar
 6. Modal
 7. General questions
+8. Video
+9. Tabs
