@@ -21,3 +21,4 @@ Small Projects List:
 9. Menu
 10. Tabs
 11. Scroll
+12. Lorem ipsum
