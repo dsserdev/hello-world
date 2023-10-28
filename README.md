@@ -22,3 +22,4 @@ Small Projects List:
 10. Tabs
 11. Scroll
 12. Lorem ipsum
+13. Slider
