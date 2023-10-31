@@ -35,8 +35,9 @@ function addItem(e) {
         </div>`;
     list.appendChild(element);
     displayAlert("item added to the list", "succes");
-
     container.classList.add("show-container");
+    addToLocalStorage(id, value);
+    setBackToDefault();
   } else if (value !== "" && editFlag === true) {
   } else {
     displayAlert("please enter value", "danger");
@@ -51,4 +52,25 @@ function displayAlert(text, action) {
     alert.textContent = "";
     alert.classList.remove(`alert-${action}`);
   }, 1000);
+}
+function addToLocalStorage(id, value) {}
+function setBackToDefault() {
+  grocery.value = "";
+  editFlag = false;
+  editId = "";
+  submitBtn.textContent = "submit";
+}
+
+clearBtn.addEventListener("click", clearItems);
+function clearItems() {
+  const items = document.querySelectorAll(".grocery-item");
+  if (items.length > 0) {
+    items.forEach(function (item) {
+      list.removeChild(item);
+    });
+  }
+  container.classList.remove("show-container");
+  displayAlert("empty list", "danger");
+  setBackToDefault();
+  // localStorage.removeItem(item);
 }
