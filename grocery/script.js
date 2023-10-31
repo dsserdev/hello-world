@@ -1,6 +1,6 @@
 const alert = document.querySelector(".alert");
 const form = document.querySelector(".grocery-form");
-const grocery = document.getElementsById("grocery");
+const grocery = document.getElementById("grocery");
 const submitBtn = document.querySelector(".submit-btn");
 const container = document.querySelector(".grocery-container");
 const list = document.querySelector(".grocery-list");
@@ -17,11 +17,29 @@ function addItem(e) {
   const id = new Date().getTime().toString();
 
   if (value !== "" && editflag === false) {
-    
+    const element = document.createElement("article");
+    element.classList.add("grocery-item");
+    const attr = document.createAttribute("data-id");
+    attr.value = id;
+    element.setAttributeNode(attr);
+    element.innerHTML = `<p class="title">${value}</p>
+        <div class="btn-container">
+          <!-- edit btn -->
+          <button type="button" class="edit-btn">
+            <i class="fas fa-edit"></i>
+          </button>
+          <!-- delete btn -->
+          <button type="button" class="delete-btn">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>`;
+    list.appendChild(element);
+    displayAlert("item added to the list", "succes");
+
+    container.classList.add("show-container");
   } else if (value !== "" && editFlag === true) {
-    
   } else {
-    displayAlert("please neter value", "danger");
+    displayAlert("please enter value", "danger");
   }
 }
 
