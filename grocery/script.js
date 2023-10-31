@@ -121,12 +121,14 @@ function editItem(e) {
 
 function removeFromLocalStorage(id) {
   let items = getLocalStorage();
-  items = items.filter(function(item) {
-    if(item.id !== id) {
+  items = items.filter(function (item) {
+    if (item.id !== id) {
       return item;
     }
   });
 
   localStorage.setItem("list", JSON.stringify(items));
 }
-function editLocalStorage(id, value) {}
+function editLocalStorage(id, value) {
+  let items = getLocalStorage(id);
+}
