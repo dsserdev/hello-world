@@ -33,6 +33,13 @@ function addItem(e) {
             <i class="fas fa-trash"></i>
           </button>
         </div>`;
+
+    const deleteBtn = element.querySelector(".delete-btn");
+    const editBtn = element.querySelector(".edit-btn");
+
+    deleteBtn.addEventListener("click", deleteItem);
+    editBtn.addEventListener("click", editItem);
+
     list.appendChild(element);
     displayAlert("item added to the list", "succes");
     container.classList.add("show-container");
@@ -73,4 +80,21 @@ function clearItems() {
   displayAlert("empty list", "danger");
   setBackToDefault();
   // localStorage.removeItem(item);
+}
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  const id = element.dataset.id;
+  list.removeChild(element);
+  if (list.children.length === 0) {
+    container.classList.remove("show-container");
+  }
+  displayAlert("item remvoed", "danger");
+  setBackToDefault();
+  // removeFromLocalStorage(id);
+}
+function editItem() {}
+
+function removeFromLocalStorage(id) {
+
+
 }
